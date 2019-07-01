@@ -1,4 +1,4 @@
-<!--  Launch file for signle robot on Gazebo -->
+<!--  Spawn single robot on Gazebo -->
 <launch>
 <!--env name="GAZEBO_RESOURCE_PATH" value="$(find rrt_exploration_tutorials)/launch/includes/meshes"/-->
 <env name="GAZEBO_RESOURCE_PATH" value="$(find ca_description)/meshes"/>
@@ -16,6 +16,7 @@
 <arg name="init_pose" value="-x 0.0 -y 0.0 -z 0.0"/>
 </include>
 
+<!--  run active-mapping -->
 <include file="$(find rrt_exploration_tutorials)/launch/includes/move_baseSafe.launch">
 <arg name="namespace" value="robot_1"/>
 </include> 
