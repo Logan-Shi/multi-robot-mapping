@@ -1,4 +1,4 @@
-<!--  Launch file for signle robot on Gazebo -->
+<!--  Launch file for single robot on Gazebo -->
 <launch>
 <!--env name="GAZEBO_RESOURCE_PATH" value="$(find rrt_exploration_tutorials)/launch/includes/meshes"/-->
 <env name="GAZEBO_RESOURCE_PATH" value="$(find ca_description)/meshes"/>
