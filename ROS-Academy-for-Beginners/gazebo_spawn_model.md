@@ -31,4 +31,7 @@
   </joint>
 ```  
 
-## XACRO
+## [XACRO](http://wiki.ros.org/urdf/Tutorials/Using%20Xacro%20to%20Clean%20Up%20a%20URDF%20File)  
+
+## [Plugin](http://wiki.ros.org/urdf/Tutorials/Using%20a%20URDF%20in%20Gazebo)  
+

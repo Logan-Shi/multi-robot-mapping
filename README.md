@@ -10,7 +10,6 @@
 
 3. `irobotcreate.launch.xml`  
   * gazebo_spawn_model  
-
   * robot_state_publisher(tf)
 
 4. `move_baseSafe.launch`  
