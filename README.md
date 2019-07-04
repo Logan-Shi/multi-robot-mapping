@@ -43,9 +43,9 @@ $ roslaunch rrt_exploration_tutorials single_experiment_irobotcreate.launch
 $ roslaunch rrt_exploration single.launch
 ```
 
-### TODO
+### Hardware Requirements
 
-1. Sensor Information (done)
+1. Sensor Information 
 
 2. Odom and tf
 
