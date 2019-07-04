@@ -18,19 +18,19 @@ $ roslaunch rrt_exploration single.launch
 2. world
 
 3. `irobotcreate.launch.xml`  
-  * gazebo_spawn_model  
-  * robot_state_publisher(tf)
+	* gazebo_spawn_model  
+	* robot_state_publisher(tf)
 
 4. `move_baseSafe.launch`  
-  * `rosrun slam_gmapping`  
-  * `rosrun move_base_node`
+	* `rosrun slam_gmapping`  
+	* `rosrun move_base_node`
 
 5. target generation  
   `rrt_exploration/single.launch`  
-  * global detector  
-  * local detector  
-  * filter  
-  * assigner
+	* global detector  
+	* local detector  
+	* filter  
+	* assigner
 
 ---
 
@@ -45,7 +45,7 @@ $ roslaunch rrt_exploration single.launch
 
 ### TODO
 
-1. Sensor Information
+1. Sensor Information (done)
 
 2. Odom and tf
 

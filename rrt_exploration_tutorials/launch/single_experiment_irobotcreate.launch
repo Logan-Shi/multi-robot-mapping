@@ -3,12 +3,14 @@
 
 <group ns="/robot_1">
 <!--  publish tf and odom, set up base controller -->
-<include file="$(find ca_driver)/launch/create_2.launch" />
-<include file="$(find rplidar_ros)/launch/rplidar.launch"/>
+<include file="$(find ca_driver)/launch/create_2_experiment.launch" >
+	<arg name="robot_name" value="robot_1"/>
+</include>
+<include file="$(find rplidar_ros)/launch/rplidar_experiment.launch"/>
 
 <!--  run active-mapping -->
 <include file="$(find rrt_exploration_tutorials)/launch/includes/move_baseSafe.launch">
-<arg name="namespace" value="robot_1"/>
+	<arg name="namespace" value="robot_1"/>
 </include> 
 </group>
 
