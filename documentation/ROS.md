@@ -1,3 +1,7 @@
+# INSTALL
+
+---
+
 ## ros install
 
 ```sh
@@ -36,6 +40,12 @@ echo $ROS_PACKAGE_PATH
 
 if setup correctly, the output should be ```/home/youruser/catkin_ws/src:/opt/ros/kinetic/share```
 
+## create package
+
+```
+catkin_create_pkg [pkg_name] depend1 depend2
+```
+
 ## roslaunch can't find package
 
 error output:
@@ -48,3 +58,35 @@ ROS path [1]=/opt/ros/kinetic/share
   - try ```source devel/setup.bash```
   - check ```sudo gedit ~/.bashrc```
 
+---
+
+# COMMANDS
+
+---
+
+* roscd  
+
+* rostopic  
+	- list  
+	- echo  
+	- pub  
+
+* rosrun  
+	- remap:  
+		```
+		rosrun robot_sim_demo robot_keyboard_teleop.py /cmd_vel_mux/input/teleop:=/robot_1/cmd_vel
+		```  
+
+* roslaunch  
+
+---
+
+# Debug Tools
+
+---
+
+* roswtf  
+
+* rosrun rqt_graph rqt_graph  
+
+* rosrun rqt_tf_tree rqt_tf_tree  
