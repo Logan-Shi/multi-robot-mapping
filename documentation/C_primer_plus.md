@@ -108,6 +108,9 @@
 > int (\*pt)\[4\]; // declare a pointer to an array of 4-int arrays  
 > pt = (int \[2\]\[4\]) { {1, 2, 3, -9}, {4, 5, 6, -8} };
 
+* variable-lenth array:   
+> void use_a_VLA(int n, int m, ar[n][m]);    
+
 ## Chap. 11: Character Strings and String Functions 
 
 ### About Strings
@@ -138,9 +141,48 @@ int main(int argc, char **argv)
 * argv for *argument value*  
 * example:  C> demo.exe --help  
 > argc == 2  
-> argv[0] == "demo.exe"  (for most systems)
+> argv[0] == "demo.exe"  (for most systems)  
 > argv[1] == "--help"  
 
+### String-to-Number Conversions
+
+* stdlib.h:  
+> int atoi(char \* );  
+> double atof(char \*);  
+> long atol(char \*);  
+> strtol();  
+> strtoul();  
+> strtod();   
+>> long strtol(const char * restrict nptr, char ** restrict endptr, int base);  
+
+## Chap. 12 Storage Classed, Linkage, and Memory Management
+
+* scope: the region or regions of a program that can access an identifier  
+  - block scope: local variables' region  
+  - function scope: something about `goto`    
+  - function prototype scope: in declaration of functions  
+  - file scope: global variables' region  
+  
+* linkage:   
+  - external linkage: can be used anywhere in a multiple program    
+  - internal linkage: can be used anywhere in a single translation unit (a source file plus its included header files)  
+  - no linkage: other than file scope variables   
+
+* storage duration: persistence of the objects accessed by identifiers   
+  - static duration: exists throughout program execution   
+  - thread duration: exists in the thread      
+  - automatic duration: usually in a block  
+  - allocated duration: allocated deliberately    
+  
+* storage class:  
+
+|  __Storage Class__   | __Duration__  | __Scope__ |__Linkage__|__How Declared__                                  |
+|  :----------------:  | :----------:  | :-------: | :-------: | :----------------------------------------------- |
+| automatic            | Automatic     |Block      |None       |In a block                                        |
+| register             | Automatic     |Block      |None       |In a block with keyword *register*                |
+| static with external linkage|Static  |File       |External   |Outside of all functions                          |
+| static with internal linkage|Static  |File       |Internal   |Outside of all functions with the keyword *static*|
+| static with no linkage|Static        |Block      |None       |In a block with the keyword *static*              |
 
 
-
+  
