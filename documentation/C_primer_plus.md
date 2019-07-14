@@ -19,6 +19,11 @@
 >>  char words[STR_LEN];
 >>  fgets(words, STR_LEN,stdin); //stdin for standard input to read from keyboard.
 >> ```
+> gets_s();  
+>> ```
+>>  gets_s(words, STR_LEN);//need to implement handler
+>> ```
+
 
 ### Output
 
@@ -28,7 +33,7 @@
 > puts();  
 >> paired with gets(), displays a string, adding a newline.  
 >> ```
->>  puts(words);
+>>  puts(words);//print until NULL('\0')
 >> ```  
 > fputs();  
 >> paired with fgets(), displays a string to desired output without adding a newline.  
@@ -39,7 +44,53 @@
 ### Other Functions
 
 * string.h:  
-> strlen();  
+> strlen(words);  
+> strcat();  
+>> append add_on to original string, can cause *buffer overflow*,returns string    
+>> ```
+>>  strcat(string, add_on); 
+>> ```
+> strncat();  
+>> append add_on to original string, discard content exceeding SIZE, returns string    
+>> ```
+>>  strncat(string, add_on, SIZE); 
+>> ```
+> strcmp();  
+>> returns a nagative number if the first string comes before the second alphabetically    
+>> returns 0 if they are the same      
+>> returns a positive number if the first string comes after the second alphabetically  
+>> ```
+>>  while(!strcmp(string_A, string_b))
+>>    puts("Same!");  
+>> ```
+> strncmp();  
+>> ```
+>>  strncmp("astronomy", "astrology", 5) == 0;
+>> ```
+> strcpy();  
+>> can be used as string initialization, returns target  
+>> ```
+>>  strcpy(target, source);
+>> ```
+> strncpy();  
+>> 
+>> ```
+>>  strncpy(target, source, SIZE - 1);
+>>  target[SIZE - 1] = '\0';  //strnpy() might discard NULL
+>> ```
+> strchr();  
+> ...  
+
+* stdio.h:  
+> sprintf();  
+>> "print" into target  
+>> ```
+>>  sprintf(target, "%s, %-19s: $%6.2f\n", string_A, string_B, float_A);
+>> ```
+
+* ctype.h:  
+> toupper();  
+> ...  
 
 ## Chap. 7: C Control Statements: Branching and Jumps
 
@@ -59,7 +110,7 @@
 
 ## Chap. 11: Character Strings and String Functions 
 
-### String Defination
+### About Strings
 
 * string literals:  
 > *const* char \* pClub = "Chelsea";   
@@ -69,9 +120,27 @@
 
 * An array of pointers to strings(`const char *pStrings[LIST_NUM]`) takes up less space, but an array of `char` arrays(`char strings[LIST_NUM][STRING_LENGTH]`) can alter contents.  
 
-### String Input  
-
 * wild pointer: 
 > char \* pWild;      //unintialized pointer  
 > scanf("%s", pWild); //ended up screwing up something else  
+
+### Command-Line Argumants
+
+```
+int main(int argc, char **argv)
+{
+  statements;
+  return 0;
+}
+```
+
+* argc for *argument count*  
+* argv for *argument value*  
+* example:  C> demo.exe --help  
+> argc == 2  
+> argv[0] == "demo.exe"  (for most systems)
+> argv[1] == "--help"  
+
+
+
 
