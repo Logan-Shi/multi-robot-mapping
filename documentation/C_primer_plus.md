@@ -68,7 +68,7 @@
 >>  strncmp("astronomy", "astrology", 5) == 0;
 >> ```
 > strcpy();  
->> can be used as string initialization, returns target  
+>> can be used as string assignment, returns target  
 >> ```
 >>  strcpy(target, source);
 >> ```
@@ -184,5 +184,75 @@ int main(int argc, char **argv)
 | static with internal linkage|Static  |File       |Internal   |Outside of all functions with the keyword *static*|
 | static with no linkage|Static        |Block      |None       |In a block with the keyword *static*              |
 
-
+* storage classed and functions:    
+  - double gamma(double); // external by default     
+  - static double beta(int, int);   
+  - extern double delta(double, int);
+  - beta() is restricted to one file
+  
+* random-number:    
+  - stdlib.h & time.h:  
+  > rand();  
+  >> returns int from 0 to RAND_MAX   
+  >> ```
+  >>  rand() % base + 1; // generate random number from 1 to base  
+  >> ```
+  > srand((unsigned int) time(0));  
+  >> setup seed  
+  
+* allocated memory:  
+  - stdlib.h:  
+  > malloc();  
+  >> it's possible that malloc() fails to allocate available memory and return NULL  
+  >> ```
+  >>  double * pDouble;
+  >>  pDouble = (double * ) malloc (30 * sizeof(double));  
+  >> ``` 
+  > free();  
+  >> must use to prevent *memory leak*  
+  >> ```
+  >>  free(pDouble);
+  >> ```
+  > calloc();  
+  >> sets all the bits in the block to zero
+  >> ```
+  >>  long * pLong;
+  >>  pLong = (long * ) calloc (100, sizeof (long));
+  >> ```
+  > exit();  
+  >> exit(EXIT_FAILURE);  
+  
+* type qualifiers:  
+  - const:  
+   ```
+    const float * pf; // or
+    float const * pf; // * pf = 1.0 is invalid
+    float * const pf; // pf = & other_address is invalid
+   ```
+   usage:  
+   + to protect array data:  
+   ```
+   char *strcat(char * restrict s1, const char * restrict s2);
+   ```
+   + to protect global data;  
+   ```
+   /* constant.h -- defines some global constants */
+   static const double PI = 3.14159;
+   
+   /* file1.c -- use global constants defined elsewhere */  
+   #include "constant.h"    
+   
+   /* file2.c -- use global constants defined elsewhere */  
+   #include "constant.h"
+   ```
+  
+  - volatile:  
+   identifier with keyword volatile tells the compiler that a variable can have its value altered by agencies other than the program. It is typically used for hardware addresses and for data shared with other programs or threads running simultaneously. it helps the compiler to cache unchanged data to register therefore speed up execution.
+   
+  - restrict:  
+   It can be applied only to pointers, and it indicates that a pointer is the sole initial means of accessing a data object.  
+   
+  - \_Atomic:  
+  used in concurrent programming.  defined in `stdatomic.h` and  `threads.h`
+  
   
