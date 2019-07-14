@@ -255,4 +255,68 @@ int main(int argc, char **argv)
   - \_Atomic:  
   used in concurrent programming.  defined in `stdatomic.h` and  `threads.h`
   
+## Chap. 13 File Input/Output
   
+  - stdio.h:  
+  > fopen();  
+  >> returns a FILE pointer if successful, ohterwise returns NULL   
+  >> ```
+  >>  FILE * fp;
+  >>  if((fp = fopen(file_name,"r")) == NULL)
+  >>    printf("Can't open %s\n",argv[1]);
+  >> ```
+  > fclose();  
+  >> returns 0 if successful, and EOF if not  
+  >> ```
+  >>  if(fcloce(fp) != 0)
+  >>    printf("Error in closing file &s\n",argv[1]);
+  >> ```
+  > getc();  
+  >> get from fp
+  >> ```
+  >>  ch = getc(fp);
+  >> ```
+  > putc();  
+  >> print to fpout  
+  >> ```
+  >>  putc(ch, fpout);
+  >> ```
+  > fprintf();  
+  >> ```
+  >>  fprintf(stderr,"Can't create output file.\n");
+  >> ```
+  > fscanf();  
+  >> ```
+  >>  fscanf(stdin, "%40s", words)
+  >> ```
+  > fgets();  
+  > fputs();  discussed in Chap. 4  
+  > fseek();  
+  >> offset: how far to move from the starting point  
+  >> mode: SEEK_SET, SEEK_CUR, SEEL_END  
+  >> returns 0 if no error occured, -1 if not  
+  >> ```
+  >>  fseek(fp, 0L, SEEK_SET);   // go to the beginning of the file  
+  >>  fseek(fp, 10L, SEEK_SET);  // go 10 bytes into the file  
+  >>  fseek(fp, 2L, SEEK_CUR);   // advance 2 bytes from the current position  
+  >>  fseek(fp, 0L, SEEK_END);   // go to the end of the file  
+  >>  fseek(fp, -10L, SEEK_END); // back up 10 bytes from the end of the fil
+  >> ```
+  > ftell();  
+  >> return (long) current file location  
+  >> ```
+  >>  cursor = ftell(fp);
+  >> ```
+  > fgetpos();  
+  >> ```
+  >>  int fgetpos(FILE * restrict stream, fpos_t * restrict pos);
+  >> ```
+  > fsetpos();   
+  >> ```
+  >>  int fsetpos(FILE * stream, const fpos_t * pos);  
+  >> ```
+  > ...  
+  
+## Chap. 14 Strutures and Other Data Forms  
+
+
