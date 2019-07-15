@@ -20,6 +20,7 @@ roslaunch turtlebot_rviz_launchers view_navigation.launch
 
 ```sh
 rosrun turtlesim turtle_teleop_key /turtle1/cmd_vel:=/cmd_vel
+rosrun robot_sim_demo robot_keyboard_teleop.py /cmd_vel_mux/input/teleop:=/robot_1/cmd_vel
 ```
 
 ## active slam simulation
