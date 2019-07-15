@@ -13,6 +13,13 @@
 	git reset --hard <reflog_id>
 	```
 
+## branching
+
+	```
+	git branch
+	git checkout [branch]
+	```
+  
 ## remote git repository
 
 	```
