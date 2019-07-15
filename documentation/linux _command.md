@@ -10,6 +10,8 @@
 	```
 	free -m
 	df -h
+	ps -ef |grep [thread-name]
+	kill -s 9 [PID]
 	```
 
 ## Directory Management

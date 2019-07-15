@@ -17,7 +17,8 @@
 </include>
 
 <include file="$(find rrt_exploration_tutorials)/launch/includes/move_baseSafe.launch">
-<arg name="namespace" value="robot_1"/>
+<arg name="robot_name" value="robot_1"/>
+<remap from="cmd_vel" to="mobile_base/commands/velocity"/>
 </include>
 </group>
 
