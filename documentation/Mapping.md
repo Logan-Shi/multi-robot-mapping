@@ -7,19 +7,23 @@ roslaunch turtlebot_teleop keyboard_teleop.launch
 rosrun rviz rviz
 rosrun map_server map_saver -f (mapname_no_suffix)
 ```
-## navigation
+
+## navigation demo with turtlebot
 
 ```sh
 roslaunch turtlebot_gazebo turtlebot_world.launch
 roslaunch turtlebot_gazebo amcl_demo.launch map_file:=~/demo.yaml
 roslaunch turtlebot_rviz_launchers view_navigation.launch
 ```
+
 ## keyboard control
 
 ```sh
 rosrun turtlesim turtle_teleop_key /turtle1/cmd_vel:=/cmd_vel
+rosrun robot_sim_demo robot_keyboard_teleop.py /cmd_vel_mux/input/teleop:=/robot_1/cmd_vel
 ```
-## active_slam
+
+## active slam simulation
 
 ```sh
 roslaunch rrt_exploration_tutorial single_tab_house.launch

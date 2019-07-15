@@ -19,7 +19,7 @@
 	git branch
 	git checkout [branch]
 	```
-
+  
 ## remote git repository
 
 	```
