@@ -73,11 +73,38 @@ ROS path [1]=/opt/ros/kinetic/share
 
 * rosrun  
 	- remap:  
+
 		```
 		rosrun robot_sim_demo robot_keyboard_teleop.py /cmd_vel_mux/input/teleop:=/robot_1/cmd_vel
 		```  
 
 * roslaunch  
+	- node:  
+
+		```
+		<launch>
+			<arg name="namespace" default="robot_1"/>
+			<node pkg="map_server" type="map_saver" name="map_saver1" args="-f $(find rrt_exploration_tutorials)/map/my_map" output="screen">
+				<remap from="map" to="$(arg namespace)/map" /> 		
+			</node>
+		</launch>
+		```
+
+	- include launch:  
+
+		```
+		<include file="$(find gazebo_ros)/launch/empty_world.launch">
+			<arg name="use_sim_time" value="true"/>
+			<arg name="debug" value="false"/>
+			<arg name="world_name" value="$(find rrt_exploration_tutorials)/launch/includes/worlds/house.world"/>
+		</include>
+		```
+
+	- argument:  
+
+		```
+		<arg name="namespace" default="robot_1"/>
+		```
 
 ---
 
