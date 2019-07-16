@@ -58,6 +58,14 @@ ROS path [1]=/opt/ros/kinetic/share
   - try ```source devel/setup.bash```
   - check ```sudo gedit ~/.bashrc```
 
+## tab error
+
+	```
+	[rospack] Warning: error while crawling /home/loganshi: boost::filesystem::status: Permission denied: "/home/loganshi/.gvfs"
+	```
+
+  - try ```sudo umount ~/.gvfs```
+
 ---
 
 # COMMANDS
@@ -117,3 +125,5 @@ ROS path [1]=/opt/ros/kinetic/share
 * rosrun rqt_graph rqt_graph  
 
 * rosrun rqt_tf_tree rqt_tf_tree  
+
+* rosrun rqt_reconfigure rqt_reconfigure
