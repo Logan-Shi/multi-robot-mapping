@@ -77,6 +77,11 @@ ROS path [1]=/opt/ros/kinetic/share
 * rostopic  
 	- list  
 	- echo  
+
+		```
+		rostopic echo /odom/pose
+		```
+
 	- pub  
 
 * rosrun  

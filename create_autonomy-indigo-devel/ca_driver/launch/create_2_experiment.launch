@@ -8,6 +8,7 @@
     <param name="robot_model" value="CREATE_2" />
     <param name="base_frame" value="$(arg robot_name)/base_footprint"/>
     <param name="odom_frame" value="$(arg robot_name)/odom"/>
+    <param name="estimate_odom_with_cmd_vel" value="true" />
   </node>
 
   <!-- Robot description -->
