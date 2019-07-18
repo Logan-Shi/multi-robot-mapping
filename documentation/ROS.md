@@ -127,3 +127,5 @@ ROS path [1]=/opt/ros/kinetic/share
 * rosrun rqt_tf_tree rqt_tf_tree  
 
 * rosrun rqt_reconfigure rqt_reconfigure
+
+* rosconsole set <node> <logger> <level>
