@@ -319,4 +319,144 @@ int main(int argc, char **argv)
   
 ## Chap. 14 Strutures and Other Data Forms  
 
+* flexible array member  
+> - rules  
+>>  1. The flexible array member must be the last member of the structure. 
+>>  2. There must be at least one other member  
+> - example  
+>> ```
+>> struct flex
+>> {
+>>   size_t count;
+>>   double average;
+>>   double scores[]; // flexible array member
+>> };
+>> 
+>> struct flex * pf;
+>> pf = malloc(sizeof(struct flex) + 5 * sizeof(double));
+>>
+>> pf->count = 5;
+>> pf->scores[2] = 18.5;
+>> ```
+
+* Unions  
+> ```
+> union hold
+> {
+> int digit;
+> double bigfl;
+> char letter;
+> };
+>
+> union hold valA;
+> valA.letter = 'R';
+> union hold valB = valA; // initialize one union to another
+> union hold valC = {88}; // initialize digit member of union
+> union hold valD = {.bigfl = 118.2}; // designated initializer
+> ```
+
+* enumerated types
+> ```
+> enum spectrum {red, orange, yellow, green, blue, violet};
+> enum spectrum color;
+>
+> color = blue;
+> if (color == yellow)
+>   ...;
+> ```
+
+* typedef  
+> ```
+> typedef struct complex
+> {
+>   float real;
+>   float imag;
+> } COMPLEX;
+> ```
+
+* functions and pointers    
+> ```
+> void ToUpper(char *);
+> void (*pf)(char *)； // pf is a pointer-to-function
+> pf = ToUpper;
+> (*pf)(mis); // same as ToUpper(mis)
+> pf(mis); // also the same
+> ```
+
+## Chap. 15 Bit Fiddling  
+### bit logical operators  
+* bitwise nagation: ~  
+> ~(10011010) // expression  
+>  (01100101) // result  
+
+* bitwise AND: &  
+> (10010011) & (00111101) // expression    
+> (00010001) // result  
+
+* bitwise OR: |  
+> (10010011) | (00111101)  // expression  
+> (10111111) // result  
+
+* bitwise XOR: ^  
+> (10010011) ^ (00111101) // expression  
+> (10101110) // result if different then 1  
+
+#### usage  
+* mask: 
+> ```
+> flag &= MASK;
+> ch &= 0xff;
+> ch &= 0377;
+> ```
+
+* setting bits:  
+> ```
+> flags |= MASK;
+> ```
+
+* clearing bits:  
+> ```
+> flags &= ~MASK;
+> ```
+
+* toggling bits:  
+> ```
+> flags ^= MASK;
+> ```
+
+* checking the value of bit:  
+> ```
+> if ((flags & MASK) == MASK)
+>   puts("flags are set correctly with MASK's ones")
+> ```
+
+### bit shift operators  
+* left shift: <<  
+> ```
+> (10001010) << 2 // expression
+> (00101000) // result 
+> ```
+
+* right shift: >>  
+> ```
+> (10001010) >> 2 // expression
+> (00100010) // result could be (11100010) because some systems fill the vacated with the leftmost bit for unsigned value
+> ```
+
+### bit fields
+* examples:  
+> ```
+> struct box_props {
+>   bool opaque               : 1; // or unsigned int (pre C99)
+>   unsigned int fill_color   : 3;
+>   unsigned int              : 4; // use unamed field to place fill-related information in one byte and border-related information in the other one
+>   bool show_border          : 1;
+>   unsigned int border_color : 3;
+>   unsigned int border_style : 2;
+>   unsigned int              : 2;
+> };
+> ```
+
+## Chap. 16 The C Preprocessor and the C Library  
+
 
