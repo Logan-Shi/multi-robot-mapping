@@ -105,3 +105,30 @@ solve conflict
 	git rm --cached <directory>  
 	git add <dirctory>  
 	```
+
+### connect timeout:  
+
+	```
+	ssh: connect to host github.com port 22: Connection timed out
+	fatal: Could not read from remote repository.
+	```
+
+* reason: could be github's server problem
+
+* solutions:  
+
+	```
+	cd ~/.ssh
+	vim config
+	i
+	> Host github.com
+	> User loganshi@sjtu.deu.cn
+	> Hostname ssh.github.com
+	> PreferredAuthentications publickey
+	> IdentityFile ~/.ssh/id_rsa
+	> Port 443
+	:wq
+	ssh -T git@github.com //check if reconnect
+	```
+
+	
