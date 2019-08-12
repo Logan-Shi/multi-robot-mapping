@@ -10,3 +10,5 @@
 |`ctrl`+`p`|show files|
 |`ctrl`+`shift`+`p`|show command palette|
 |`alt`+`number`|tab switch|
+|`ctrl`+`/`|comment|
+|`ctrl`+`]`|indent|

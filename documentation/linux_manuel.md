@@ -1,3 +1,5 @@
+# Command
+
 ## Serial port
 
 	```
@@ -12,6 +14,7 @@
 	df -h
 	ps -ef |grep [thread-name]
 	kill -s 9 [PID]
+	lspci // view hardware
 	```
 
 ## Directory Management
@@ -43,3 +46,16 @@
 	sudo apt-get install [software]-*
 	sudo apt-get remove [software]-*
 	```
+
+# Problems fixing
+
+## [`sudo apt-get update` takes too long](https://blog.csdn.net/qwqw3333333/article/details/78239448)  
+do remember to backup source.list  
+
+## [set up nvidia drivers](https://blog.csdn.net/lukaslong/article/details/81488219) 
+
+## System program problem detected  
+```
+sudo vim /etc/default/apport
+override `enabled = 1` to `enabled = 0`
+```
