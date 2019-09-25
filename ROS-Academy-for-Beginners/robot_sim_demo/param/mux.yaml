@@ -31,4 +31,4 @@ subscribers:
     timeout:     1.0
     priority:    5
 
-publisher:       "output/cmd_vel"
+publisher:       "/cmd_vel"

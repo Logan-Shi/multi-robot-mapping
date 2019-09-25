@@ -12,3 +12,4 @@
 |`alt`+`number`|tab switch|
 |`ctrl`+`/`|comment|
 |`ctrl`+`]`|indent|
+|`ctrl`+`y`|redo|

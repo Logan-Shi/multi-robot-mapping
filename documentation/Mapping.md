@@ -39,3 +39,14 @@ roslaunch frontier_exploration global_map.launch
 ```
 add Marker topic to select certain area to explore
 
+## Stage
+
+* [Tutorial](http://wiki.ros.org/turtlebot_stage/Tutorials/indigo/Customizing%20the%20Stage%20Simulator)
+
+* [User Guide](http://playerstage.sourceforge.net/doc/stage-cvs/group__stage.html)
+
+## Cartographer
+
+rosservice call /finish_trajectory 0
+rosservice call /write_state "{filename: '${HOME}/Downloads/mymap.pbstream'}"
+rosrun cartographer_ros cartographer_pbstream_to_ros_map -map_filestem=${HOME}/Downloads/mymap -pbstream_filename=${HOME}/Downloads/mymap.pbstream -resolution=0.05
