@@ -1,6 +1,0 @@
-<launch>
-	<arg name="namespace" default="robot_1"/>
-	<node pkg="map_server" type="map_saver" name="map_saver1" args="-f $(find rrt_exploration_tutorials)/map/my_map" output="screen">
-		<remap from="map" to="$(arg namespace)/map" /> 		
-	</node>
-</launch>
