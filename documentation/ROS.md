@@ -21,6 +21,7 @@ sudo rosdep init
 rosdep update
 
 echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:~/navi/devel/setup.bash (append new workspace)
 source ~/.bashrc
 
 sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential

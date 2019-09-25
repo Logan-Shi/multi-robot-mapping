@@ -55,10 +55,10 @@ use dev to develop volatile features.
 	```
 	git remote add <remote_repo_name> <git@github.com:Logan-Shi/multi-robot-mapping.git> 
 	git remote -v
-	git push <remote_repo_name> <branch>
+	git push <remote_repo_name> <local_branch>:<remote_branch>
 		<-u> to connect remote with local, used for the first push
 		<-f> to force push to remote repo
-	git pull <remote_repo_name> <branch>
+	git pull <remote_repo_name> <branch>:<remote_branch>
 	```
 
 ### cooperation
@@ -130,5 +130,17 @@ solve conflict
 	:wq
 	ssh -T git@github.com //check if reconnect
 	```
+
+### push error
+
+	```
+	error: src refspec master does not match any.
+	```
+
+* solution:
+	
+	```
+	git add . && git commit -m "init"
+	``` 
 
 	
