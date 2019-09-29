@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-  <arg name="config" default="$(find ca_driver)/config/default.yaml" />
+  <arg name="config" default="$(find ca_driver)/config/experiment.yaml" />
   <arg name="robot_name" default="robot_1"/>
 
   <node name="ca_driver" pkg="ca_driver" type="ca_driver" output="screen">
