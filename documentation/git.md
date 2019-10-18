@@ -55,9 +55,9 @@ use dev to develop volatile features.
 	```
 	git remote add <remote_repo_name> <git@github.com:Logan-Shi/multi-robot-mapping.git> 
 	git remote -v
-	git push <remote_repo_name> <local_branch>:<remote_branch>
+	git push <remote_repo_name> <remote_branch>
 		<-u> to connect remote with local, used for the first push
-		<-f> to force push to remote repo
+		<-f> to force push to remote repo, don't use, can cause extra trouble
 	git pull <remote_repo_name> <branch>:<remote_branch>
 	```
 
@@ -65,8 +65,9 @@ use dev to develop volatile features.
 
 	```
 	git clone git@github.com:Logan-Shi/multi-robot-mapping.git
-	git checkout -b dev origin/dev
+	git checkout -b dev origin/dev **VERY IMPORTANT, MUST REMEMBER**
 	git add & git commit
+	git push origin dev
 	```
 
 solve conflict
@@ -84,7 +85,13 @@ solve conflict
 	```
 	git check-ignore -v App.class
 	```
-
+	
+	use `!` to make exceptions
+	
+	```
+	!tolua.lib
+        ```
+	
 ### using alias
 
 	```
