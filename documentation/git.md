@@ -59,6 +59,7 @@ use dev to develop volatile features.
 		<-u> to connect remote with local, used for the first push
 		<-f> to force push to remote repo, don't use, can cause extra trouble
 	git pull <remote_repo_name> <branch>:<remote_branch>
+	git remote rename <remote_repo_name> <new_remote_repo_name>
 	```
 
 ### cooperation
@@ -78,6 +79,12 @@ solve conflict
 	git push oringin dev
 	```
 
+delete remote branch
+
+	```
+	git push <remote_name> -d <remote_branch>
+	```
+	
 ## Other features
 
 ### git ignore
